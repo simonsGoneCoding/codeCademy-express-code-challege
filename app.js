@@ -9,10 +9,19 @@ const mountainRanges = ["alps", "andes", "himalayas", "rockies"];
 // Your code here
 //mountainsRouter
 const mountainsRouter = express.Router();
+
 app.use("/mountains", mountainsRouter);
 
 mountainsRouter.get("/", (req, res) => {
   res.send(mountains);
+});
+
+//mountainRangesRouter
+const mountainRangesRouter = express.Router();
+app.use("/mountainRanges", mountainRangesRouter);
+
+mountainRangesRouter.get("/", (req, res) => {
+  res.send(mountainRanges);
 });
 
 app.listen(PORT, () => {
